@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profil Pribadi</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #1e1e2f;
+      color: white;
+    }
+    .brand {
+      font-size: 1em;
+    }
+    .menu {
+      display: flex;
+      gap: 20px;
+    }
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 1em;
+      transition: color 0.3s;
+    }
+    .menu a:hover {
+      color: #ffcc00;
+    }
+
+    #header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 30px;
+      background-color: #f5f5f5;
+    }
+
+    .header-left {
+      max-width: 50%;
+    }
+    .header-left h1 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+    .header-left p {
+      font-size: 1em;
+      margin-bottom: 25px;
+      color: #444;
+    }
+    .header-left button {
+      background-color: #1e1e2f;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .header-left button:hover {
+      background-color: #ffcc00;
+      color: black;
+    }
+
+    .header-right img {
+      max-width: 600px;
+      width: 100%;
+      max-height: 400px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {
+      #header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .header-left, .header-right {
+        max-width: 100%;
+      }
+      .header-right {
+        margin-top: 30px;
+      }
+    }
+
+    #biodata {
+      padding: 60px 30px;
+      background-color: #ffffff;
+      text-align: center;
+    }
+    
+    .about-container h2 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+    
+    .subtext {
+      font-size: 1.1em;
+      color: #666;
+      margin-bottom: 40px;
+    }
+    
+    .info-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+    
+    .info-box {
+      background-color: #f1f1f1;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      font-size: 1em;
+      font-weight: bold;
+      color: #333;
+      transition: background-color 0.3s;
+    }
+    
+    .info-box:hover {
+      background-color: #ffcc00;
+      color: black;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    #portofolio {
+      padding: 60px 30px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+    
+    .portfolio-container h2 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+    
+    .portfolio-container .subtext {
+      font-size: 1.1em;
+      color: #666;
+      margin-bottom: 40px;
+    }
+    
+    .portfolio-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+    
+    .portfolio-item {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+    
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+    }
+    
+    .portfolio-item img {
+      width: 100%;
+      height: auto;
+      max-width: 350px;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    
+    .portfolio-item h3 {
+      margin: 10px 0 5px;
+      font-size: 1.2em;
+      color: #333;
+    }
+    
+    .portfolio-item p {
+      font-size: 0.95em;
+      color: #666;
+    }
+    
+    /* Responsive Layout */
+    @media (max-width: 900px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+    }
+    
+    
+    
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="brand">Brand</div>
+    <div class="menu">
+      <a href="#header">Header</a>
+      <a href="#biodata">Biodata</a>
+      <a href="#portofolio">Portofolio</a>
+    </div>
+  </nav>
+
+  <!-- HEADER SECTION -->
+  <section id="header">
+    <div class="header-left">
+      <h1>Selamat Datang di Website Saya</h1>
+      <p>Ini adalah contoh header dengan dua kolom. Kolom kiri berisi teks seperti ini.</p>
+      <button>Pelajari Lebih Lanjut</button>
+    </div>
+    <div class="header-right">
+      <img src="img\FOTO Abulkhair Rizvan Yahya.jpg" alt="Gambar Header">
+    </div>
+  </section>
+
+  <!-- ABOUT ME SECTION -->
+  <section id="biodata">
+    <div class="about-container">
+      <h2>About Me</h2>
+      <p class="subtext">A brief introduction about myself</p>
+
+      <div class="info-grid">
+        <div class="info-box">Full Name</div>
+        <div class="info-box">Education</div>
+        <div class="info-box">Pekerjaan</div>
+        <div class="info-box">Contact</div>
+        <div class="info-box">Hobi</div>
+        <div class="info-box">Alamat</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTOFOLIO SECTION -->
+<section id="portofolio">
+  <div class="portfolio-container">
+    <h2>Portofolio</h2>
+    <p class="subtext">Beberapa proyek yang pernah saya kerjakan</p>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="img\proyek_1.jpg" alt="Proyek 1">
+        <h3>Proyek 1</h3>
+        <p>Deskripsi proyek 1.</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="img\proyek_2.jpg" alt="Proyek 2">
+        <h3>Proyek 2</h3>
+        <p>Deskripsi proyek 2.</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="img\proyek_3.jpg" alt="Proyek 3">
+        <h3>Proyek 3</h3>
+        <p>Deskripsi proyek 3.</p>
+      </div>
+      <!-- Tambahkan lebih banyak proyek jika ingin -->
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>
